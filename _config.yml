@@ -9,6 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "sunrise" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+minimal_mistakes_skin    : "sunrise"
 title                    : "Ari Pomeranz / Site Title"
 title_separator          : "-"
 name                     : &name "Ari Pomeranz"
