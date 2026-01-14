@@ -8,8 +8,8 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-minimal_mistakes_skin    : "air"
+site_theme               : "mint" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+minimal_mistakes_skin    : "mint"
 title                    : "Ari Pomeranz / Site Title"
 title_separator          : "-"
 name                     : &name "Ari Pomeranz"
