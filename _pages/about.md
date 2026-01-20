@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 
-I am a mathematics graduate student at **Georgia Institute of Technology**, advised by [Professor Matthew Baker](https://sites.google.com/view/mattbakermath/home/). 
+I am a mathematics graduate student at **Georgia Institute of Technology**, advised by [Professor Matthew Baker](https://sites.google.com/view/mattbakermath/home/). My academic email is [apomeranz3@gatech.edu](mailto:apomeranz3@gatech.edu), feel free to reach out for any inquiries.
 
 ### Research
 My research interests center on **matroid theory**, with a particular focus on discrete polymatroids and their associated algebraic structures. Specifically, I work with:
