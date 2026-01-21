@@ -1,12 +1,10 @@
 ---
-title: "Erdos-Szekeres Theorem for Products of Finite Sequences"
+title: "The Erdős-Szekeres theorem for products of finite sequences"
 collection: publications
-permalink: /publication/2022-11-30-erdos-szekeres-products
-excerpt: 'A study of the Erdős-Szekeres theorem in the context of sequence products, completed during an undergraduate research experience.'
-date: 2022-11-30
-venue: 'Georgia Institute of Technology'
-paperurl: 'https://math.gatech.edu/sites/default/files/images/erdosszekeresproductsnovember30.pdf'
-citation: 'Pomeranz, Ari. (2022). "Erdos-Szekeres Theorem for Products of Finite Sequences." <i>Georgia Institute of Technology Research</i>.'
+permalink: /publication/2021-07-23-erdos-szekeres-products
+excerpt: 'This paper generalizes the Erdős-Szekeres theorem to products of sequences, establishing bounds for the longest monotonic subsequences in such structures.'
+date: 2021-07-23
+venue: 'Proceedings of the American Mathematical Society'
+paperurl: 'https://www.ams.org/journals/proc/2021-149-10/S0002-9939-2021-15503-2/S0002-9939-2021-15503-2.pdf'
+citation: 'Pomeranz, Ari. "The Erdős-Szekeres theorem for products of finite sequences." <i>Proceedings of the American Mathematical Society</i> 149, no. 10 (2021): 4233-4246.'
 ---
-
-This research explores generalizations of the Erdős-Szekeres theorem. While my current work focuses on matroid theory and Lorentzian polynomials, this project provided a foundational look at extremal combinatorics and sequence structures.
