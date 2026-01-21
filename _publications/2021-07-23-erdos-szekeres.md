@@ -1,7 +1,7 @@
 ---
 title: "The Erdős-Szekeres theorem for products of finite sequences"
 collection: publications
-category: manuscripts
+category: Undergraduate Research
 permalink: /publication/2021-07-23-erdos-szekeres-products
 excerpt: 'This paper generalizes the Erdős-Szekeres theorem to products of sequences, establishing bounds for the longest monotonic subsequences in such structures.'
 date: 2021-07-23
