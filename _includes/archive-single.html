@@ -16,14 +16,16 @@
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     
     {% if post.collection == 'teaching' %}
-      <div style="margin-bottom: 0.9em;">
-        <p style="margin-top: 0; margin-bottom: 0;">
-          <strong>{{ title }}</strong> — {{ post.excerpt }}
-        </p>
-        <p style="margin-top: 0; margin-bottom: 0; font-size: 0.9em; color: #555;">
-          <i class="fa fa-user-graduation" aria-hidden="true"></i> {{ post.type }} | <i>{{ post.venue }}</i>
-        </p>
-      </div>
+  <div style="margin-bottom: 0.9em;">
+    <p style="margin-top: 0; margin-bottom: 0;">
+      <strong>{{ title }}</strong> — {{ post.excerpt }}
+    </p>
+    
+    <p style="margin-top: 0; margin-bottom: 0; font-size: 0.9em; color: var(--global-text-color-light);">
+      <i class="fa fa-graduation-cap" aria-hidden="true"></i> {{ post.type }} | <i>{{ post.venue }}</i>
+    </p>
+  </div>
+{% endif %}
 
 
     {% else %}
