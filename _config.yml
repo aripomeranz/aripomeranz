@@ -24,7 +24,7 @@ repository               : "aripomeranz/aripomeranz.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "./images/bio-photo.jpg"
+  avatar           : "images/bio-photo.jpg"
   name             : "Ari Pomeranz"
   pronouns         : # example: "she/her"  
   bio              : "Mathematics Graduate Student at Georgia Tech"
