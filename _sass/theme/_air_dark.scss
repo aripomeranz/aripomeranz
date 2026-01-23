@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AIR THEME - DARK VERSION (Fixed Readability)
+   AIR THEME - DARK VERSION (5% Lighter + High Visibility Text)
    ========================================================================== */
 
 /* Color codes used for the theme */
@@ -8,13 +8,13 @@ $dark-primary-color         : mix(#000, $primary-color, 40%);
 $darker-primary-color       : mix(#000, $primary-color, 60%);
 $light-primary-color        : mix(#000, $primary-color, 50%);
 
-/* Adjusted Backgrounds for better contrast */
-$background                 : #1a1c22; /* Deeper charcoal, less "blue" than before */
+/* 5% Lighter Background: Changed from #1a1c22 to #282c34 (Standard Slate) */
+$background                 : #282c34; 
 $background-light           : mix(#fff, $background, 20%);
 $background-lighter         : mix(#fff, $background, 90%);
 
 /* Text Colors */
-$text                       : #ffffff; /* Pure White for main text */
+$text                       : #ffffff; 
 $link                       : #00adb5;
 $link-dark                  : mix(#000, $link, 25%);
 $link-light                 : mix(#fff, $link, 25%);
@@ -26,7 +26,7 @@ $notice-color               : #7a8288;
 $success-color              : #62c462;
 $warning-color              : #f89406;
 
-/* Other basic settings for the template */
+/* Other basic settings */
 $border-radius              : 4px;
 $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
 $global-transition          : all 0.2s ease-in-out;
@@ -36,31 +36,31 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Dark theme for the site */
+/* Dark theme overrides */
 html[data-theme="dark"] {
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #{$background};
     
-    /* FIX 1: Hard-coded Dark Footer */
-    --global-footer-bg-color            : #14161a; 
+    /* Footer: Slightly lighter to match the new 5% lift */
+    --global-footer-bg-color            : #21252b; 
     
     --global-border-color               : #{$light-primary-color};
     --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #22262e;
+    --global-code-background-color      : #2c313a;
     --global-code-text-color            : #f8f8f2;
     --global-fig-caption-color          : #{$light-primary-color};
+    
     --global-link-color                 : #{$link};
     --global-link-color-hover           : #{$link-light};
     --global-link-color-visited         : #{$link-dark};
     
-    /* FIX 2: Force Navigation Links to be White */
     --global-masthead-link-color        : #ffffff; 
     --global-masthead-link-color-hover  : #{$primary-color};
     
     --global-text-color                 : #{$text};
     
-    /* FIX 3: Force "Teaching" roles to be Light Grey (Readable) instead of Dark Teal */
-    --global-text-color-light           : #d1d1d1; 
+    /* THE FIX: Force secondary text (Teaching roles) to be bright white */
+    --global-text-color-light           : #ffffff; 
     
     --global-thead-color                : #{$background-lighter};
 }
