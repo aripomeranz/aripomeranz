@@ -44,8 +44,8 @@
 
         {% if post.collection == 'teaching' %}
           <p style="margin-top: 0; margin-bottom: 0;">
-            {{ post.type }} <br />
-            {{ post.excerpt }} | <i>{{ post.venue }}</i>
+            <strong>{{ post.title }}</strong>, {{ post.excerpt }} <br />
+            {{ post.type }} | <i>{{ post.venue }}</i>
           </p>
         {% elsif post.collection == 'publications' %}
          <p style="margin-top: 0; margin-bottom: 0;">Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
