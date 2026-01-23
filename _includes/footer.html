@@ -1,3 +1,9 @@
-<div class="page__footer-copyright">
+<div class="page__footer-copyright" style="float: left; text-align: left; width: 100%; padding: 20px 0;">
   &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}
 </div>
+
+<style>
+  .page__footer-follow, .footer__links, .site-map {
+    display: none !important;
+  }
+</style>
