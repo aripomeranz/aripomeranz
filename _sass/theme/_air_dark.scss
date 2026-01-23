@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AIR THEME - DARK VERSION (5% Lighter + High Visibility Text)
+   AIR THEME - DARK VERSION (True Dark Charcoal)
    ========================================================================== */
 
 /* Color codes used for the theme */
@@ -8,8 +8,8 @@ $dark-primary-color         : mix(#000, $primary-color, 40%);
 $darker-primary-color       : mix(#000, $primary-color, 60%);
 $light-primary-color        : mix(#000, $primary-color, 50%);
 
-/* 5% Lighter Background: Changed from #1a1c22 to #282c34 (Standard Slate) */
-$background                 : #282c34; 
+/* DARKER BACKGROUND: #15171a removes the purple/blue tint */
+$background                 : #15171a; 
 $background-light           : mix(#fff, $background, 20%);
 $background-lighter         : mix(#fff, $background, 90%);
 
@@ -41,12 +41,12 @@ html[data-theme="dark"] {
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #{$background};
     
-    /* Footer: Slightly lighter to match the new 5% lift */
-    --global-footer-bg-color            : #21252b; 
+    /* Footer: Matches the new neutral dark tone */
+    --global-footer-bg-color            : #0f1114; 
     
     --global-border-color               : #{$light-primary-color};
     --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #2c313a;
+    --global-code-background-color      : #1e2126; /* Slightly lighter than bg for contrast */
     --global-code-text-color            : #f8f8f2;
     --global-fig-caption-color          : #{$light-primary-color};
     
@@ -59,7 +59,7 @@ html[data-theme="dark"] {
     
     --global-text-color                 : #{$text};
     
-    /* THE FIX: Force secondary text (Teaching roles) to be bright white */
+    /* KEEP THIS: Ensures your teaching text stays bright white */
     --global-text-color-light           : #ffffff; 
     
     --global-thead-color                : #{$background-lighter};
