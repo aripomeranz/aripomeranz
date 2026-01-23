@@ -27,7 +27,9 @@
     {% endif %}
 
     <h2 class="archive__item-title" itemprop="headline" style="margin-bottom: 0;">
-      {% if post.collection == 'publications' %}
+      {% if post.collection == 'teaching' %}
+        {{ title }}
+      {% elsif post.collection == 'publications' %}
         <a href="{{ post.paperurl }}">{{ title }}</a>
       {% elsif post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
@@ -42,7 +44,7 @@
 
         {% if post.collection == 'teaching' %}
           <p style="margin-top: 0; margin-bottom: 0;">
-            <strong>{{ post.title }}</strong> — {{ post.type }} <br />
+            {{ post.type }} <br />
             {{ post.excerpt }} | <i>{{ post.venue }}</i>
           </p>
         {% elsif post.collection == 'publications' %}
