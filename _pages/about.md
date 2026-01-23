@@ -20,4 +20,4 @@ My research interests center on **matroid theory**, with a particular focus on d
 Aside from formal research, I maintain an expository blog where I write about foundational material. My goal is to create a resource that helps students and researchers navigate the complexities of polymatroids in a more elementary way.
 
 ### Non-mathematics
-Beyond mathematics, I enjoy weightlifting and baking. My favorite dessert is banana bread, which I have been making since the age of five. I am also interested in personal finance and investments.
+I really enjoy homemade baked goods, I have probably made banana bread over 200 times. I like weightlifting. I also am interested in personal finance and investments.
