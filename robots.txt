@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://aripomeranz.github.io/aripomeranz/sitemap.xml
