@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "Ari Pomeranz"
+description: "Academic CV of Ari Pomeranz, mathematics Ph.D. student at Georgia Institute of Technology."
 permalink: /cv/
 author_profile: true
 redirect_from:
