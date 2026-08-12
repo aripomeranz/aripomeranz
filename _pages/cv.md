@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Ari Pomeranz"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,56 +9,29 @@ redirect_from:
 
 {% include base_path %}
 
+**Ph.D. Student in Mathematics, Georgia Institute of Technology**  
+[apomeranz3@gatech.edu](mailto:apomeranz3@gatech.edu)
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* **Ph.D. in Mathematics**, Georgia Institute of Technology, 2022–Present  
+  Advisor: [Professor Matthew Baker](https://sites.google.com/view/mattbakermath/home/)
+* **B.S. in Mathematics**, University of Maryland, College Park, 2018–2022
 
-Work experience
+Research Interests
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Matroid and polymatroid theory
+* M-convex sets and Lorentzian polynomials
+* Representability of matroids and matroids over tracts
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
+<ul>{% for post in site.publications reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}</ul>
+
+Teaching Experience
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+<ul>{% for post in site.teaching reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}</ul>
