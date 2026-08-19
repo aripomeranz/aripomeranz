@@ -25,10 +25,20 @@ Research Interests
 * M-convex sets and Lorentzian polynomials
 * Representability of matroids and matroids over tracts
 
+Preprints
+======
+<ul>{% for post in site.publications reversed %}
+  {% if post.status == 'preprint' %}
+    {% include archive-single-cv.html %}
+  {% endif %}
+{% endfor %}</ul>
+
 Publications
 ======
 <ul>{% for post in site.publications reversed %}
-  {% include archive-single-cv.html %}
+  {% unless post.status == 'preprint' %}
+    {% include archive-single-cv.html %}
+  {% endunless %}
 {% endfor %}</ul>
 
 Teaching Experience
