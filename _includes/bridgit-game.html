@@ -1,0 +1,61 @@
+<div id="ticket-game" class="ticket-game" data-style="plain">
+  <header class="tg-header">
+    <h2>Bridg-It</h2>
+    <label>Style <select id="tg-style"><option value="plain">Plain</option><option value="paper">Paper</option><option value="dark">Dark</option></select></label>
+  </header>
+  <div class="tg-controls">
+    <fieldset class="tg-modes"><legend>Lines</legend>
+      <label><input type="radio" name="tg-mode" value="classic"> Uncolored</label>
+      <label><input type="radio" name="tg-mode" value="paper" checked> Default</label>
+      <label><input type="radio" name="tg-mode" value="custom"> Custom</label>
+    </fieldset>
+    <label>First <select id="tg-first"><option>Join</option><option>Cut</option></select></label>
+    <button type="button" id="tg-new">New game</button>
+    <button type="button" id="tg-undo">Undo</button>
+  </div>
+  <details id="tg-custom" class="tg-custom" hidden>
+    <summary>Edit lines</summary>
+    <div id="tg-assignments" class="tg-assignments"></div>
+    <div id="tg-colors" class="tg-colors"></div>
+    <button type="button" id="tg-apply">Apply &amp; restart</button>
+  </details>
+  <div class="tg-layout">
+    <section class="tg-map-panel" aria-label="Board">
+      <svg id="tg-map" viewBox="0 0 640 405" role="img" aria-labelledby="tg-map-title tg-map-description">
+        <title id="tg-map-title">Bridg-It board</title>
+        <desc id="tg-map-description">Click an edge to select its line. The dashed edge is reserved.</desc>
+      </svg>
+    </section>
+    <aside class="tg-hands" aria-label="Hands">
+      <div id="tg-status" role="status" aria-live="polite"></div>
+      <div class="tg-hand"><h3>Join <span id="tg-join-count">0</span></h3><div id="tg-join-hand"></div></div>
+      <div class="tg-hand"><h3>Cut <span id="tg-cut-count">0</span></h3><div id="tg-cut-hand"></div></div>
+    </aside>
+  </div>
+  <section class="tg-tickets-panel" aria-labelledby="tg-desk-title">
+    <div class="tg-section-heading"><h3 id="tg-desk-title">Tickets</h3><span id="tg-remaining"></span></div>
+    <div id="tg-tickets" class="tg-ticket-grid"></div>
+  </section>
+  <section class="tg-representations" aria-labelledby="tg-representations-title">
+    <div class="tg-section-heading">
+      <h3 id="tg-representations-title">Representations</h3>
+      <label>Hand <select id="tg-rep-player"><option>Join</option><option>Cut</option></select></label>
+      <label class="tg-checkbox"><input type="checkbox" id="tg-rep-reserved"> Include e₁₄</label>
+    </div>
+    <p id="tg-rep-summary" aria-live="polite"></p>
+    <div id="tg-rep-grid" class="tg-rep-grid"></div>
+    <div class="tg-pagination">
+      <span id="tg-rep-range"></span>
+      <button type="button" id="tg-rep-more">Show more</button>
+      <button type="button" id="tg-rep-all">Show all</button>
+    </div>
+  </section>
+  <div class="tg-bottom">
+    <details><summary>Rules</summary>
+      <p>Take turns selecting a line, using one of its remaining tickets. This selects a line rather than a particular edge. Join wins with a circuit through e₁₄; Cut wins with a cocircuit through e₁₄. Wins are checked automatically.</p>
+      <p>The small graphs show every edge set with the selected player’s ticket counts. They do not assign specific edges to either player. A single possible s–t path need not be a win.</p>
+    </details>
+    <details><summary>Moves</summary><ol id="tg-history"></ol></details>
+  </div>
+  <noscript>This game requires JavaScript.</noscript>
+</div>

@@ -1,0 +1,95 @@
+.ticket-game {
+  --bg:#fff; --fg:#202020; --muted:#686868; --border:#d0d0d0; --faint:#e8e8e8; --control:#f6f6f6;
+  background:var(--bg); color:var(--fg); font:14px/1.45 system-ui,-apple-system,sans-serif;
+  max-width:1100px; margin:0 auto; padding:14px;
+}
+.ticket-game[data-style=paper] {
+  --bg:#fbfaf6; --fg:#282720; --muted:#6c695e; --border:#c9c5b8; --faint:#e7e3d9; --control:#f4f1e8;
+  font-family:Georgia,'Times New Roman',serif; font-size:15px;
+}
+.ticket-game[data-style=dark] {
+  --bg:#202225; --fg:#e9e9e9; --muted:#b0b2b5; --border:#53565b; --faint:#35383e; --control:#303339;
+}
+.ticket-game * {box-sizing:border-box}
+.ticket-game h2,.ticket-game h3,.ticket-game p,.ticket-game fieldset,.ticket-game label {margin:0}
+.ticket-game h2 {font-weight:600; font-size:22px; font-family:inherit; line-height:1.3; border:0}
+.ticket-game h3 {font:600 14px/1.4 system-ui,-apple-system,sans-serif; border:0}
+.ticket-game[data-style=paper] h3 {font-family:Georgia,'Times New Roman',serif}
+.ticket-game button,.ticket-game select {
+  font:inherit; font-size:13px; line-height:1.4; color:var(--fg); background:var(--control);
+  border:1px solid var(--border); border-radius:2px; padding:4px 9px; margin:0; height:auto; box-shadow:none;
+}
+.ticket-game button {cursor:pointer}
+.ticket-game button:hover:not(:disabled) {border-color:var(--fg); background:var(--faint)}
+.ticket-game button:disabled {opacity:.45; cursor:default}
+.ticket-game :is(button,select,input,summary):focus-visible {outline:2px solid #3875a9; outline-offset:3px}
+.ticket-game input[type=radio],.ticket-game input[type=checkbox] {margin:0 3px 0 0; accent-color:#557488}
+.ticket-game label {display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:400}
+.tg-header {display:flex; justify-content:space-between; align-items:center; padding-bottom:13px}
+.tg-header>label {color:var(--muted); font-size:12px}
+.tg-controls {display:flex; align-items:center; flex-wrap:wrap; gap:10px 17px; border-bottom:1px solid var(--border); padding-bottom:12px}
+.tg-modes {border:0; padding:0; display:flex; gap:10px; align-items:center}
+.tg-modes legend {float:left; padding:0; margin-right:9px; font-size:13px; color:var(--muted)}
+.tg-layout {display:grid; grid-template-columns:minmax(0,1fr) 185px; gap:22px; padding:10px 0}
+.tg-map-panel {min-width:0; align-self:center}
+.tg-map-panel svg {display:block; width:100%; max-height:390px; height:auto}
+.tg-hands {padding-top:18px}
+#tg-status {font-size:15px; margin-bottom:20px}
+#tg-status strong {font-weight:650}
+#tg-status small {display:block; color:var(--muted); font-size:11px; margin-top:7px}
+.tg-hand {margin-top:17px}
+.tg-hand h3 {display:flex; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:5px; margin-bottom:6px}
+.tg-hand h3 span {color:var(--muted); font-weight:400}
+#tg-join-hand,#tg-cut-hand {display:flex; gap:4px; flex-wrap:wrap; font-size:12px; color:var(--muted); min-height:20px}
+.tg-mini-ticket {border-bottom:2px solid var(--line); padding:1px 3px; color:var(--fg); font-size:12px}
+.tg-section-heading {display:flex; gap:15px; align-items:center; flex-wrap:wrap; margin-bottom:10px}
+.tg-section-heading>span {color:var(--muted); font-size:12px; margin-left:auto}
+.tg-tickets-panel {padding:8px 0 20px}
+.tg-ticket-grid {display:flex; flex-wrap:wrap; gap:6px}
+.ticket-game .tg-ticket {border-left:4px solid var(--line); padding:6px 10px; display:inline-flex; gap:9px; align-items:center; min-height:33px}
+.tg-ticket strong {font-weight:500; font-size:13px}
+.tg-ticket-stock {color:var(--muted); font-size:12px}
+.tg-representations {border-top:1px solid var(--border); padding:16px 0}
+.tg-representations h3 {margin-right:auto}
+.ticket-game #tg-rep-summary {font-size:12px; color:var(--muted); margin-bottom:12px}
+.tg-rep-grid {display:grid; grid-template-columns:repeat(auto-fill,minmax(175px,1fr)); gap:12px 18px}
+.tg-rep-card {margin:0; min-width:0}
+.tg-rep-card svg {display:block; width:100%; height:auto; aspect-ratio:640/405; border:1px solid var(--faint)}
+.tg-rep-card figcaption {font-size:11px; color:var(--muted); padding-top:4px; display:flex; justify-content:space-between; gap:6px}
+.tg-rep-card figcaption span:first-child {color:var(--fg)}
+.tg-rep-card .tg-station-label {font-size:29px}
+.tg-pagination {display:flex; gap:8px; align-items:center; margin-top:12px; font-size:12px; color:var(--muted)}
+.tg-pagination:has(button[hidden]+button[hidden]) {display:none}
+.tg-bottom {border-top:1px solid var(--border); padding-top:12px; display:flex; gap:30px}
+.tg-bottom details {flex:1; min-width:0}
+.ticket-game summary {cursor:pointer; font-size:12px; color:var(--muted)}
+.tg-bottom details p {font-size:12px; margin:9px 0; color:var(--muted)}
+.tg-bottom ol {font-size:12px; max-height:200px; overflow:auto; padding-left:24px}
+.tg-custom {padding:12px 0; border-bottom:1px solid var(--border)}
+.tg-custom[hidden] {display:none}
+.tg-assignments {display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:8px; margin:12px 0}
+.tg-assignments label {display:flex}
+.tg-assignments select {width:100%}
+.tg-colors {display:flex; gap:10px; flex-wrap:wrap; margin:10px 0}
+.ticket-game input[type=color] {width:26px; height:26px; padding:0; border:1px solid var(--border); background:var(--bg)}
+.tg-edge {cursor:pointer}
+.tg-edge:hover .tg-track {stroke-width:8}
+.tg-edge-label {font:14px Georgia,serif; fill:var(--fg); paint-order:stroke; stroke:var(--bg); stroke-width:5px; stroke-linejoin:round}
+.tg-station {fill:var(--bg); stroke:var(--fg); stroke-width:2}
+.tg-terminal {fill:var(--bg); stroke:var(--fg); stroke-width:2}
+.tg-station-label {font:23px Georgia,serif; fill:var(--fg)}
+.tg-map-reserved {font:13px Georgia,serif; fill:var(--muted)}
+@media(max-width:620px) {
+  .ticket-game {padding:8px; font-size:13px}
+  .tg-layout {grid-template-columns:1fr; gap:0}
+  .tg-map-panel svg {max-height:320px}
+  .tg-hands {display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:0 0 13px}
+  #tg-status {grid-column:1/-1; margin:0}
+  .tg-hand {margin:0}
+  .tg-rep-grid {grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px}
+  .tg-representations .tg-section-heading {gap:8px 12px}
+  .tg-representations h3 {width:100%}
+  .tg-controls {gap:9px}
+  .tg-modes {width:100%}
+  .tg-ticket-grid {gap:5px}
+}

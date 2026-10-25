@@ -16,6 +16,9 @@ main:
 
   - title: "Teaching"
     url: /teaching/    
+
+  - title: "Bridg-It"
+    url: /bridgit/
     
  # - title: "Portfolio"
  #   url: /portfolio/
