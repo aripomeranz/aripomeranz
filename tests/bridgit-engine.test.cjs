@@ -72,4 +72,22 @@ for(const assignments of [E.defaultLines,Array.from({length:13},(_,i)=>i),Array(
 }
 assert.throws(()=>E.makeGame([0]),/Invalid/);
 assert.equal(E.makeGame(E.defaultLines).move(999),false);
-console.log(`Passed: independent rank checks, ${completed} completed allocations, 120 random games, certificates and undo.`);
+// Representations enumerate the full hand, including cyclic sets and the empty hand.
+const grouped=E.makeGame(Array(13).fill(0));
+assert.deepEqual(grouped.representations().map(s=>s.mask),[0]);
+for(let turn=0;turn<12;turn++)assert.equal(grouped.move(0),true);
+assert.equal(grouped.representations('Join').length,1716); // 13 choose 6.
+assert.equal(grouped.representations('Cut').length,1716);
+for(const set of grouped.representations()) {
+  assert.equal(set.mask.toString(2).replace(/0/g,'').length,6);
+  assert.equal(set.forest,E.forest(set.mask));
+}
+const separate=E.makeGame(Array.from({length:13},(_,i)=>i));
+separate.move(0);separate.move(1);separate.move(3);
+assert.deepEqual(separate.representations('Join').map(s=>s.mask),[(1<<0)|(1<<3)]);
+const paperRepresentations=E.makeGame(E.defaultLines);
+paperRepresentations.move(paperRepresentations.ids.indexOf(0));
+assert.deepEqual(paperRepresentations.representations().map(s=>s.mask),[1<<2,1<<5]);
+paperRepresentations.undo();assert.equal(paperRepresentations.representations().length,1);
+assert.throws(()=>paperRepresentations.representations('Other'),/Invalid/);
+console.log(`Passed: rank checks, ${completed} completed allocations, 120 games, certificates, undo and representation enumeration (up to 1716 sets).`);

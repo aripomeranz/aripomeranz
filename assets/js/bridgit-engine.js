@@ -28,6 +28,23 @@
     return true;
   }
   const forests = [];
+  const playableSets = [];
+  function connects(mask) {
+    const reached = new Set([0]);
+    let changed = true;
+    while (changed) {
+      changed = false;
+      edges.slice(0,13).forEach(([a,b],i) => {
+        if (!(mask & (1 << i))) return;
+        if (reached.has(a) && !reached.has(b)) { reached.add(b); changed = true; }
+        if (reached.has(b) && !reached.has(a)) { reached.add(a); changed = true; }
+      });
+    }
+    return reached.has(7);
+  }
+  for (let mask = 0; mask < (1 << 13); mask++) {
+    playableSets.push({ mask, forest: forest(mask), connects: connects(mask) });
+  }
   for (let mask = 0; mask < (1 << edges.length); mask++) if (forest(mask)) {
     let size = 0;
     for (let bits = mask; bits; bits &= bits - 1) size++;
@@ -60,6 +77,20 @@
       return bounds.reduce((a,b) => a+b, 0) - 7 + rank(capacity.map((v,i) => v-bounds[i]));
     }
     const history = [];
+    const representationCache = new Map();
+    function representations(player = 'Join') {
+      if (!['Join','Cut'].includes(player)) throw new Error('Invalid player.');
+      const hand = status().hands[player];
+      const key = hand.join(',');
+      if (representationCache.has(key)) return representationCache.get(key);
+      const sets = playableSets.filter(set => {
+        const counts = ids.map(() => 0);
+        for (let i = 0; i < 13; i++) if (set.mask & (1 << i)) counts[mapping[i]]++;
+        return counts.every((v,i) => v === hand[i]);
+      });
+      representationCache.set(key, sets);
+      return sets;
+    }
     function status() {
       const hands = { Join: capacity.map(() => 0), Cut: capacity.map(() => 0) };
       history.forEach(move => hands[move.player][move.line]++);
@@ -96,7 +127,7 @@
       }
       return type.slice(0, target);
     }
-    return { ids, mapping, capacity, target, rank, dualRank, move, status, winningTickets,
+    return { ids, mapping, capacity, target, rank, dualRank, move, status, winningTickets, representations,
       undo: () => history.pop(), assignments: assignments.slice(), first };
   }
   return { vertices, edges, defaultLines, colors, forest, makeGame };
