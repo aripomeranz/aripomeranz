@@ -190,6 +190,7 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - tests
   - vendor
 keep_files:
   - .git

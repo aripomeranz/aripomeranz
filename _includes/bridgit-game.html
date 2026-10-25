@@ -1,0 +1,55 @@
+<div id="ticket-game" class="ticket-game">
+  <header class="tg-intro">
+    <span class="tg-eyebrow">BRIDG-IT · TWO PLAYERS · ONE SCREEN</span>
+    <h2>Next stop: a little combinatorics.</h2>
+    <p>A metro twist on the Shannon switching game. Take turns buying tickets for a line. Join wants a connection; Cut wants to block it.</p>
+  </header>
+  <div class="tg-controls">
+    <fieldset class="tg-modes"><legend>Choose your network</legend>
+      <label><input type="radio" name="tg-mode" value="classic"> Individual edges</label>
+      <label><input type="radio" name="tg-mode" value="paper" checked> Paper example</label>
+      <label><input type="radio" name="tg-mode" value="custom"> Custom lines</label>
+    </fieldset>
+    <label class="tg-first">First to the ticket desk <select id="tg-first"><option>Join</option><option>Cut</option></select></label>
+    <button type="button" id="tg-new" class="tg-button">New game</button>
+  </div>
+  <details id="tg-custom" class="tg-custom" hidden>
+    <summary>Design your lines</summary>
+    <p>Give edges the same line to group their tickets. The dashed connection is always reserved. Apply your design to start a new game.</p>
+    <div id="tg-assignments" class="tg-assignments"></div>
+    <div id="tg-colors" class="tg-colors"></div>
+    <button type="button" id="tg-apply" class="tg-button">Apply lines &amp; start</button>
+  </details>
+  <div class="tg-layout">
+    <section class="tg-map-panel" aria-label="Railway board">
+      <div class="tg-panel-heading"><span>THE NETWORK</span><span id="tg-network-name">Paper example</span></div>
+      <svg id="tg-map" viewBox="0 0 640 425" role="img" aria-labelledby="tg-map-title tg-map-description">
+        <title id="tg-map-title">Bridg-It metro map</title>
+        <desc id="tg-map-description">Thirteen playable connections join eight stations between s and t. A dashed reserved connection joins s to t.</desc>
+      </svg>
+      <p class="tg-map-note">The dashed connection is reserved. Buying a line ticket doesn’t choose a particular edge.</p>
+    </section>
+    <aside class="tg-journey" aria-label="Game status and hands">
+      <div id="tg-status" class="tg-status" role="status" aria-live="polite"></div>
+      <div class="tg-hand tg-hand-join"><h3>Join’s tickets <span id="tg-join-count">0</span></h3><div id="tg-join-hand" class="tg-hand-tickets"></div></div>
+      <div class="tg-hand tg-hand-cut"><h3>Cut’s tickets <span id="tg-cut-count">0</span></h3><div id="tg-cut-hand" class="tg-hand-tickets"></div></div>
+      <button type="button" id="tg-undo" class="tg-button tg-quiet">↶ Undo last ticket</button>
+    </aside>
+  </div>
+  <section class="tg-desk" aria-labelledby="tg-desk-title">
+    <div class="tg-desk-heading"><h3 id="tg-desk-title">The ticket desk</h3><span id="tg-remaining"></span></div>
+    <p>Choose a line below, or click one of its connections on the map.</p>
+    <div id="tg-tickets" class="tg-ticket-grid"></div>
+  </section>
+  <div class="tg-bottom">
+    <details><summary>How to play</summary>
+      <p>Two people share this screen. On your turn, buy one available ticket. There is one ticket per playable edge, shared between both players. In <strong>Individual edges</strong> mode every edge has its own ticket, giving the ordinary graph game. In <strong>Paper example</strong> mode the two green edges share a line, as do the two red edges. Each black edge is a separate line.</p>
+      <p>Join wins with a circuit through the reserved connection; Cut wins with a cocircuit through it. The game checks these conditions automatically and stops as soon as someone wins. Every completed game has exactly one winner.</p>
+      <p>In the grouped game, finding just one possible route is not enough. For Join, a winning selection of tickets has a forest representation, but <em>every</em> representation either connects s to t or contains a cycle. You may use a smaller selection from your hand to win. Extra tickets never hurt.</p>
+      <p>Cut’s corresponding winning selection has a representation whose removal leaves the network connected, but removing any representation <em>together with the reserved edge</em> disconnects it.</p>
+    </details>
+    <details><summary>Your journey so far</summary><ol id="tg-history"></ol></details>
+  </div>
+  <p class="tg-footnote">An interactive example from Ari Pomeranz’s work on polymatroid circuits. No accounts, matchmaking, or actual fares. Your game is saved only in this browser.</p>
+  <noscript>This game needs JavaScript enabled in your browser.</noscript>
+</div>

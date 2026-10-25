@@ -16,6 +16,9 @@ main:
 
   - title: "Teaching"
     url: /teaching/    
+
+  - title: "Ticket game"
+    url: /bridgit/
     
  # - title: "Portfolio"
  #   url: /portfolio/
